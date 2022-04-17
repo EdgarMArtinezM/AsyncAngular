@@ -1,0 +1,15 @@
+<table class="tblGeneral">
+  <tbody>
+      <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Calificacion</th>
+      </tr>
+      <tr *ngFor="let alumno of alumnos | async ; let i = index" [ngClass]="{'active': alumno.calificacion==false,'active2':alumno.calificacion}">
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.edad }}</td>
+          <td>{{ alumno.calificacion | calificacion }}</td>
+      </tr>
+  </tbody>
+  <p>Solo tenemos {{reprobados}} reprobados</p>
+</table>
